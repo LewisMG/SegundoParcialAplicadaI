@@ -64,18 +64,6 @@
     <Compile Include="UI\Registros\rDetalle.Designer.cs">
       <DependentUpon>rDetalle.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Consultas\cPersona.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Consultas\cPersona.Designer.cs">
-      <DependentUpon>cPersona.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Registros\rPersonas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Registros\rPersonas.Designer.cs">
-      <DependentUpon>rPersonas.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,14 +77,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UI\Consultas\cPersona.resx">
-      <DependentUpon>cPersona.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rDetalle.resx">
       <DependentUpon>rDetalle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\rPersonas.resx">
-      <DependentUpon>rPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -113,6 +95,7 @@
   <ItemGroup>
     <Folder Include="BLL\" />
     <Folder Include="Entidades\" />
+    <Folder Include="UI\Consultas\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
