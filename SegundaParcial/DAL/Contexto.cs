@@ -1,0 +1,22 @@
+﻿using SegundaParcial.Entidades;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+
+namespace SegundaParcial.DAL
+{
+    public class Contexto : DbContext
+    {
+        public DbSet<Vehiculos> vehiculos { get; set; }
+        public DbSet<Mantenimiento> mantenimiento { get; set; }
+
+        public Contexto() : base("ConStr") { }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+    }
+}
