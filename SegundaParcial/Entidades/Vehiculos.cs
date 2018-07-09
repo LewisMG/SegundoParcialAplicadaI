@@ -4,26 +4,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-namespace SegundaParcial.Entidades
+namespace SegundoParcial.Entidades
 {
     public class Vehiculos
     {
         [Key]
         public int VehiculoId { get; set; }
         public string Descripcion { get; set; }
-        public float Mantenimiento { get; set; }
-
-        public virtual List<Mantenimiento> Detalle { get; set; }
+        public decimal Mantenimiento { get; set; }
 
         public Vehiculos()
         {
-            this.Detalle = new List<Mantenimiento>();
-        }
-
-
-        public override string ToString()
-        {
-            return this.Descripcion;
+            VehiculoId = 0;
+            Descripcion = string.Empty;
+            Mantenimiento = 0;
         }
     }
 }

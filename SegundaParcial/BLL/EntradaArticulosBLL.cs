@@ -9,17 +9,26 @@ using System.Text;
 
 namespace SegundoParcial.BLL
 {
-    public class VehiculosBLL
+    public class EntradaArticulosBLL
     {
-        public static bool Guardar(Vehiculos vehiculo)
+        public static bool Guardar(EntradaArticulos entradaArticulo)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
+            Repositorio<Articulos> articulo = new Repositorio<Articulos>(new Contexto());
 
             try
             {
-                if (contexto.vehiculos.Add(vehiculo) != null)
+
+                if (contexto.entradaArticulos.Add(entradaArticulo) != null)
                 {
+
+
+                    foreach (var item in articulo.GetList(x => x.Descripcion == entradaArticulo.Articulo))
+                    {
+                        contexto.articulos.Find(item.ArticuloId).Inventario += entradaArticulo.Cantidad;
+                    }
+
                     contexto.SaveChanges();
                     paso = true;
                 }
@@ -34,16 +43,17 @@ namespace SegundoParcial.BLL
 
         public static bool Eliminar(int id)
         {
+
             bool paso = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                Vehiculos vehiculo = contexto.vehiculos.Find(id);
+                EntradaArticulos entradaArticulos = contexto.entradaArticulos.Find(id);
 
-                if (vehiculo != null)
+                if (entradaArticulos != null)
                 {
-                    contexto.Entry(vehiculo).State = EntityState.Deleted;
+                    contexto.Entry(entradaArticulos).State = EntityState.Deleted;
                 }
 
                 if (contexto.SaveChanges() > 0)
@@ -51,68 +61,76 @@ namespace SegundoParcial.BLL
                     paso = true;
                     contexto.Dispose();
                 }
+        
             }
             catch (Exception)
             {
                 throw;
             }
+
             return paso;
         }
 
-        public static bool Modificar(Vehiculos vehiculo)
+        public static bool Modificar(EntradaArticulos entradaArticulos)
         {
+
             bool paso = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                contexto.Entry(vehiculo).State = EntityState.Modified;
+                contexto.Entry(entradaArticulos).State = EntityState.Modified;
 
                 if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
                 }
                 contexto.Dispose();
+
             }
             catch (Exception)
             {
                 throw;
             }
+
             return paso;
         }
 
-        public static Vehiculos Buscar(int id)
+        public static EntradaArticulos Buscar(int id)
         {
-            Vehiculos vehiculo = new Vehiculos();
+
+            EntradaArticulos entradaArticulos = new EntradaArticulos();
             Contexto contexto = new Contexto();
 
             try
             {
-                vehiculo = contexto.vehiculos.Find(id);
+                entradaArticulos = contexto.entradaArticulos.Find(id);
                 contexto.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
-            return vehiculo;
+            return entradaArticulos;
+
         }
-
-        public static List<Vehiculos> GetList(Expression<Func<Vehiculos, bool>> expression)
+        
+        public static List<EntradaArticulos> GetList(Expression<Func<EntradaArticulos, bool>> expression)
         {
-            List<Vehiculos> vehiculo = new List<Vehiculos>();
+            List<EntradaArticulos> entradaArticulos = new List<EntradaArticulos>();
             Contexto contexto = new Contexto();
 
             try
             {
-                vehiculo = contexto.vehiculos.Where(expression).ToList();
+                entradaArticulos = contexto.entradaArticulos.Where(expression).ToList();
                 contexto.Dispose();
+
             }
             catch (Exception)
             {
                 throw;
             }
-            return vehiculo;
+            return entradaArticulos;
         }
     }
 }

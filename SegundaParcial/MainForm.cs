@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SegundaParcial.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -91,6 +92,76 @@ namespace SegundaParcial
             {
                 childForm.Close();
             }
+        }
+
+        private void registrarTalleresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rTalleres ver = new rTalleres();
+            ver.MdiParent = this;
+            ver.Show();
+        }
+
+        private void registrarVehiculosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rVehiculos ver = new rVehiculos();
+            ver.MdiParent = this;
+            ver.Show();
+        }
+
+        private void registrarArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rArticulos ver = new rArticulos();
+            ver.MdiParent = this;
+            ver.Show();
+        }
+
+        private void registrarEntradaDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEntradaArticulos ver = new rEntradaArticulos();
+            ver.MdiParent = this;
+            ver.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            rTalleres ver = new rTalleres();
+            ver.MdiParent = this;
+            ver.Show();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            rVehiculos ver = new rVehiculos();
+            ver.MdiParent = this;
+            ver.Show();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            rArticulos ver = new rArticulos();
+            ver.MdiParent = this;
+            ver.Show();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            rEntradaArticulos ver = new rEntradaArticulos();
+            ver.MdiParent = this;
+            ver.Show();
+        }
+
+        private void registrarMantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rMantenimiento ver = new rMantenimiento();
+            ver.MdiParent = this;
+            ver.Show();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            rMantenimiento ver = new rMantenimiento();
+            ver.MdiParent = this;
+            ver.Show();
         }
     }
 }

@@ -2,16 +2,33 @@ Create DataBase SegundoParcialDb
 go
 use SegundoParcialDb
 go
-create table Vehiculos
+CREATE TABLE Vehiculos
 (
-	VehiculoId int primary key(),
-	Descripcion varchar(30),
-	Mantenimiento float,
+	VehiculoId int primary key identity(1,1),
+	Descripcion varchar(50),
+	Mantenimiento int
 );
 
-sp_columns Vehiculos
+CREATE TABLE Articulos
+(
+	ArticuloId int primary key identity(1,1),
+	Descripcion varchar(50),
+	Costo int,
+	Ganancia int,
+	Precio int,
+	Inventario int
 
-insert into Vehiculos (VehiculoId, Descripcion, Mantenimiento)
-  values (1,'Toyota Corolla 2005 Le',0);
-insert into Vehiculos (VehiculoId, Descripcion, Mantenimiento)
-  values (2,'Honda Crv 2015 Touring',0);
+);
+
+CREATE TABLE Mantenimientos
+(
+	MantenimientoId int primary key identity(1,1),
+	Costo int,
+	Fecha DateTime
+);
+
+CREATE TABLE Talleres
+(
+	TallerId int primary key identity(1,1),
+	Nombre varchar(50),
+);

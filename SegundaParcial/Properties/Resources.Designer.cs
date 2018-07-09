@@ -63,9 +63,9 @@ namespace SegundaParcial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_Add_List_16 {
+        internal static System.Drawing.Bitmap _1111111plus_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8_Add_List_16", resourceCulture);
+                object obj = ResourceManager.GetObject("1111111plus_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,6 +93,46 @@ namespace SegundaParcial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Delete_Row_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Delete_Row_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Delete_Row_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Delete_Row_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Maintenance_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Maintenance_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Plus_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Plus_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Save_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Save_32", resourceCulture);
@@ -113,9 +153,29 @@ namespace SegundaParcial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_Send_to_Printer_32 {
+        internal static System.Drawing.Bitmap icons8_Support_16 {
             get {
-                object obj = ResourceManager.GetObject("icons8_Send_to_Printer_32", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_Support_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Traffic_Jam_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Traffic_Jam_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Wheel_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Wheel_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

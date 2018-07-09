@@ -50,10 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ArticulosBLL.cs" />
+    <Compile Include="BLL\EntradaArticulosBLL.cs" />
     <Compile Include="BLL\MantenimientoBLL.cs" />
+    <Compile Include="BLL\TalleresBLL.cs" />
     <Compile Include="BLL\VehiculosBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\Repositorio.cs" />
+    <Compile Include="Entidades\Articulos.cs" />
+    <Compile Include="Entidades\EntradaArticulos.cs" />
     <Compile Include="Entidades\Mantenimiento.cs" />
+    <Compile Include="Entidades\MantenimientoDetalle.cs" />
+    <Compile Include="Entidades\Talleres.cs" />
     <Compile Include="Entidades\Vehiculos.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -63,30 +72,68 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\Registros\rDetalle.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\rDetalle.Designer.cs">
-      <DependentUpon>rDetalle.cs</DependentUpon>
+    <Compile Include="UI\Registros\rArticulos.Designer.cs">
+      <DependentUpon>rArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rEntradaArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rEntradaArticulos.Designer.cs">
+      <DependentUpon>rEntradaArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rMantenimiento.Designer.cs">
+      <DependentUpon>rMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rTalleres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rTalleres.Designer.cs">
+      <DependentUpon>rTalleres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rVehiculos.Designer.cs">
+      <DependentUpon>rVehiculos.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="UI\Registros\rDetalle.resx">
-      <DependentUpon>rDetalle.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\rArticulos.resx">
+      <DependentUpon>rArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rEntradaArticulos.resx">
+      <DependentUpon>rEntradaArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rMantenimiento.resx">
+      <DependentUpon>rMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rTalleres.resx">
+      <DependentUpon>rTalleres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rVehiculos.resx">
+      <DependentUpon>rVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SegundoParcial.Entidades.Articulos.datasource" />
+    <None Include="Properties\DataSources\SegundoParcial.Entidades.Vehiculos.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,12 +150,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scritps\SQLQuery.sql" />
+    <None Include="Resources\icons8_Maintenance_32.png" />
+    <None Include="Resources\icons8_Delete_Row_16.png" />
+    <None Include="Resources\icons8_Delete_Row_32.png" />
+    <None Include="Resources\1111111plus_16.png" />
+    <None Include="Resources\icons8_Plus_16.png" />
+    <None Include="Resources\icons8_Wheel_16.png" />
+    <None Include="Resources\icons8_Traffic_Jam_16.png" />
+    <None Include="Resources\icons8_Support_16.png" />
+    <None Include="Resources\icons8_Search_16.png" />
     <None Include="Resources\icons8_Delete_Document_32.png" />
     <None Include="Resources\icons8_Save_32.png" />
     <None Include="Resources\icons8_Add_Property_32.png" />
-    <None Include="Resources\icons8_Add_List_16.png" />
-    <None Include="Resources\icons8_Send_to_Printer_32.png" />
-    <None Include="Resources\icons8_Search_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

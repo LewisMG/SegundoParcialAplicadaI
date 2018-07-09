@@ -117,4 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="vehiculoIdLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="descripcionLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="mantenimientoLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="vehiculosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="GeneralErrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>198, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAMAQAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFBsbFxAeYi8AK3/RACt/0QArf9EAK3/RACt
+        /0RKb3b1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAck8t2HH2d/xZPa/8WT2v/Fk9r/xZP
+        a/8YW3b/FYq5/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKv/fwuHxP8LfbX/C321/wt9
+        tf8LfbX/C362/weW2/8Aqv8qAAAAAAAAAAAAAAAAY1pGPgAAAAAAAAAAAAAAAACr/64Zsfn1c8Hc/1O/
+        7/9Dvvj/Q774/zy8+P8Irf/nAKv/cAAAAAAAAAAAAAAAAE8vvP9EF/+qRBf/qkQX/6pEF/+qKJD63vjM
+        lf/85Mf//fLj//3y4/+n2e35GK/8YAAAAAAAAAAAAAAAAAAAAAAzQ6D/IzAy/yEhIf8hISH/ISEh/yYk
+        S/9OoNj1Vbrt7ES+9+hEvvfoJ7X6zACq/wkAAAAAAAAAAAAAAABDGP9qRBf//0QX//9EF///RBf//0QX
+        //9EF///RBf//0ga98XSdBpE0nQaRNJ0GkRyUy/1AAAAAAAAAAAAAAAARxb/L1Qr/rClifD/wKns/8Cp
+        7P/NsNj/5r+v/2o/x/ZONDX/XD0e/1w9Hv9ZTDL/hm4+/wAAAAAAAAAAAAAAAAAAAABGHf8sjm707P3y
+        4//98uP//OTH//PKoP9/S5//l1oc/5daHP+XWhz/llwf/7JrHv/VcxgqAAAAAAAAAAAAAAAAAAAAAF01
+        /XlXL/vSVy/70lsv8th6Q73105Bb/92YT//dmE//3ZhP/92TSP/TeyDn0XYZcAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA2Yo7uvno0//98uP//fLj//3y4//vx57514AtYAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAANN6IS7ajT/i3phP6N6YT+jemE/o2Io4zMZxHAkAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAA//8AAP//AAD++wAA/gMAAP4DAAD8AwAAwAcAAMAHAADAOwAAwAMAAOADAADwAwAA/gcAAP8H
+        AAD//wAA//8AAA==
+</value>
+  </data>
 </root>
