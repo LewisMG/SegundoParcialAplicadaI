@@ -145,7 +145,17 @@ namespace SegundaParcial.UI.Registros
                 }
                 else
                 {
-                    paso = ArticulosBLL.Modificar(articulo);
+                    int id = Convert.ToInt32(ArticuloIdNumericUpDown.Value);
+                    Articulos articulos = ArticulosBLL.Buscar(id);
+                    if (articulos != null)
+                    {
+                        paso = ArticulosBLL.Modificar(articulo);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Id No Encotrado!", "Fallo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 LimpiarCampos();
                 GeneralErrorProvider.Clear();

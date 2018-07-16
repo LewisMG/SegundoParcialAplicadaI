@@ -15,29 +15,22 @@ namespace SegundoParcial.BLL
         {
             bool paso = false;
             Contexto contexto = new Contexto();
-            Repositorio<Articulos> articulo = new Repositorio<Articulos>(new Contexto());
-
+            
             try
             {
-
                 if (contexto.entradaArticulos.Add(entradaArticulo) != null)
                 {
-
-
-                    foreach (var item in articulo.GetList(x => x.Descripcion == entradaArticulo.Articulo))
-                    {
-                        contexto.articulos.Find(item.ArticuloId).Inventario += entradaArticulo.Cantidad;
-                    }
+                    var Articulo = contexto.articulos.Find(entradaArticulo.ArticuloID);
+                    //Incrementar la cantidad
+                    Articulo.Inventario += entradaArticulo.Cantidad;
 
                     contexto.SaveChanges();
                     paso = true;
                 }
                 contexto.Dispose();
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            catch (Exception) { throw; }
+
             return paso;
         }
 
@@ -53,6 +46,10 @@ namespace SegundoParcial.BLL
 
                 if (entradaArticulos != null)
                 {
+                    var Articulo = contexto.articulos.Find(entradaArticulos.ArticuloID);
+                    //Reduce la cantidad
+                    Articulo.Inventario -= entradaArticulos.Cantidad;
+
                     contexto.Entry(entradaArticulos).State = EntityState.Deleted;
                 }
 
@@ -79,6 +76,15 @@ namespace SegundoParcial.BLL
 
             try
             {
+                EntradaArticulos EntradaAnterior = EntradaArticulosBLL.Buscar(entradaArticulos.EntradaId);
+
+                int diferencia;
+                diferencia = entradaArticulos.Cantidad - EntradaAnterior.Cantidad;
+                                
+                var Articulo = contexto.articulos.Find(EntradaAnterior.ArticuloID);
+                
+                Articulo.Inventario += diferencia;
+
                 contexto.Entry(entradaArticulos).State = EntityState.Modified;
 
                 if (contexto.SaveChanges() > 0)

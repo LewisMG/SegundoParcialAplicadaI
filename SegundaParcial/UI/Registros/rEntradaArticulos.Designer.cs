@@ -57,7 +57,7 @@
             // entradaIdLabel
             // 
             entradaIdLabel.AutoSize = true;
-            entradaIdLabel.Location = new System.Drawing.Point(12, 41);
+            entradaIdLabel.Location = new System.Drawing.Point(12, 15);
             entradaIdLabel.Name = "entradaIdLabel";
             entradaIdLabel.Size = new System.Drawing.Size(59, 13);
             entradaIdLabel.TabIndex = 43;
@@ -84,7 +84,7 @@
             // fechaLabel
             // 
             fechaLabel.AutoSize = true;
-            fechaLabel.Location = new System.Drawing.Point(12, 9);
+            fechaLabel.Location = new System.Drawing.Point(13, 47);
             fechaLabel.Name = "fechaLabel";
             fechaLabel.Size = new System.Drawing.Size(40, 13);
             fechaLabel.TabIndex = 50;
@@ -108,7 +108,7 @@
             // 
             // EntradaIdNumericUpDown
             // 
-            this.EntradaIdNumericUpDown.Location = new System.Drawing.Point(71, 39);
+            this.EntradaIdNumericUpDown.Location = new System.Drawing.Point(72, 12);
             this.EntradaIdNumericUpDown.Name = "EntradaIdNumericUpDown";
             this.EntradaIdNumericUpDown.Size = new System.Drawing.Size(121, 20);
             this.EntradaIdNumericUpDown.TabIndex = 49;
@@ -116,7 +116,7 @@
             // fechaDateTimePicker
             // 
             this.fechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaDateTimePicker.Location = new System.Drawing.Point(71, 9);
+            this.fechaDateTimePicker.Location = new System.Drawing.Point(71, 41);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
             this.fechaDateTimePicker.Size = new System.Drawing.Size(121, 20);
             this.fechaDateTimePicker.TabIndex = 51;

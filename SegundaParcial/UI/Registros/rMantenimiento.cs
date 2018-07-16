@@ -185,7 +185,12 @@ namespace SegundaParcial.UI.Registros
                 }
                 else
                 {
-                    Paso = MantenimientoBLL.Modificar(mantenimiento);
+                    int id = Convert.ToInt32(MantenimientoIdNumericUpDown.Value);
+                    Mantenimiento mantenimientos = MantenimientoBLL.Buscar(id);
+                    if (mantenimientos != null)
+                    {
+                        Paso = MantenimientoBLL.Modificar(mantenimiento);
+                    }
                     GeneralErrorProvider.Clear();
                 }
                 

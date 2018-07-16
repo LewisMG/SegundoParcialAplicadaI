@@ -29,7 +29,7 @@ namespace SegundaParcial.UI.Registros
         {
             EntradaArticulos entradaArticulo = new EntradaArticulos();
             entradaArticulo.EntradaId = Convert.ToInt32(EntradaIdNumericUpDown.Value);
-            entradaArticulo.Articulo = ArticulosComboBox.Text;
+            entradaArticulo.ArticuloID = (int)ArticulosComboBox.SelectedValue;
             entradaArticulo.Cantidad = Convert.ToInt32(CantidadNumericUpDown.Value);
             
             return entradaArticulo;
@@ -83,7 +83,7 @@ namespace SegundaParcial.UI.Registros
                 if (entradaarticulo != null)
                 {
                     EntradaIdNumericUpDown.Value = entradaarticulo.EntradaId;
-                    ArticulosComboBox.Text = entradaarticulo.Articulo;
+                    ArticulosComboBox.SelectedValue = entradaarticulo.ArticuloID;
                     CantidadNumericUpDown.Value = entradaarticulo.Cantidad;
                 }
                 else
@@ -118,21 +118,33 @@ namespace SegundaParcial.UI.Registros
                 }
                 else
                 {
-                    paso = EntradaArticulosBLL.Modificar(entradaarticulo);
-                }
-                LimpiarCampos();
-                GeneralErrorProvider.Clear();
-                if (paso)
-                {
-                    MessageBox.Show("Guardado!", "Exitosamente", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo Guardar!", "Fallo!", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    if (EntradaIdNumericUpDown.Value == 0)
+                    {
+                        paso = EntradaArticulosBLL.Guardar(entradaarticulo);
+                    }
+                    else
+                    {
+                        var E = EntradaArticulosBLL.Buscar(Convert.ToInt32(EntradaIdNumericUpDown.Value));
 
+                        if (E != null)
+                        {
+                            paso = EntradaArticulosBLL.Modificar(entradaarticulo);
+                        }
+                    }
+                    LimpiarCampos();
+                   
+                    if (paso)
+                    {
+                        MessageBox.Show("Guardado!", "Exitoso", 
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No pudo Guardar!", "Fallo", 
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    GeneralErrorProvider.Clear();
+                }
             }
         }
 
