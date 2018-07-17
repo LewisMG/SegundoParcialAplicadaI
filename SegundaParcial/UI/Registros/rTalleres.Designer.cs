@@ -39,10 +39,10 @@
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
-            this.GeneralerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.GeneralErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TallerIdNumericUpDown)).BeginInit();
             this.panelBotones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GeneralerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GeneralErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -136,9 +136,9 @@
             this.buttonNuevo.UseVisualStyleBackColor = true;
             this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
-            // GeneralerrorProvider
+            // GeneralErrorProvider
             // 
-            this.GeneralerrorProvider.ContainerControl = this;
+            this.GeneralErrorProvider.ContainerControl = this;
             // 
             // rTalleres
             // 
@@ -156,7 +156,7 @@
             this.Text = "Registro de Talleres";
             ((System.ComponentModel.ISupportInitialize)(this.TallerIdNumericUpDown)).EndInit();
             this.panelBotones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GeneralerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GeneralErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,6 +173,6 @@
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonNuevo;
-        private System.Windows.Forms.ErrorProvider GeneralerrorProvider;
+        private System.Windows.Forms.ErrorProvider GeneralErrorProvider;
     }
 }

@@ -107,7 +107,14 @@ namespace SegundaParcial.UI.Registros
                 }
                 else
                 {
-                    paso = VehiculosBLL.Modificar(vehiculos);
+                   
+                    int id = Convert.ToInt32(vehiculoIdNumericUpDown.Value);
+                    var mantenimientos = VehiculosBLL.Buscar(id);
+                    if (mantenimientos != null)
+                    {
+                        paso = VehiculosBLL.Modificar(vehiculos);
+                    }
+
                 }
                 LimpiarCampos();
                 GeneralErrorProvider.Clear();

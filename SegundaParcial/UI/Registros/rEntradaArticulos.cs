@@ -104,11 +104,10 @@ namespace SegundaParcial.UI.Registros
         {
             bool paso = false;
             EntradaArticulos entradaarticulo = Llenarclase();
-
-
-            if (validar(2))
+            
+            if(validar(2))
             {
-                MessageBox.Show("Introduzca los campos Correspondientes");
+                MessageBox.Show("Favor de Llenar las Casillas");
             }
             else
             {
@@ -118,32 +117,22 @@ namespace SegundaParcial.UI.Registros
                 }
                 else
                 {
-                    if (EntradaIdNumericUpDown.Value == 0)
-                    {
-                        paso = EntradaArticulosBLL.Guardar(entradaarticulo);
-                    }
-                    else
-                    {
-                        var E = EntradaArticulosBLL.Buscar(Convert.ToInt32(EntradaIdNumericUpDown.Value));
+                    var V = SegundoParcial.BLL.EntradaArticulosBLL.Buscar(Convert.ToInt32(EntradaIdNumericUpDown.Value));
 
-                        if (E != null)
-                        {
-                            paso = EntradaArticulosBLL.Modificar(entradaarticulo);
-                        }
-                    }
-                    LimpiarCampos();
-                   
-                    if (paso)
+                    if (V != null) 
                     {
-                        MessageBox.Show("Guardado!", "Exitoso", 
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        paso = EntradaArticulosBLL.Modificar(entradaarticulo);
                     }
-                    else
-                    {
-                        MessageBox.Show("No pudo Guardar!", "Fallo", 
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    GeneralErrorProvider.Clear();
+                }
+                LimpiarCampos();
+                GeneralErrorProvider.Clear();
+                if (paso)
+                {
+                    MessageBox.Show("Guardado!", "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No pudo Guardar!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

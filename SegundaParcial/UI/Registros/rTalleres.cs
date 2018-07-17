@@ -34,32 +34,44 @@ namespace SegundaParcial.UI.Registros
             NombretextBox.Clear();
         }
 
-        private bool Validar()
+        private bool Validar(int error)
         {
-            bool HayErrores = false;
+            bool errores = false;
 
-            if (String.IsNullOrWhiteSpace(NombretextBox.Text))
+            if (error == 1 && TallerIdNumericUpDown.Value == 0)
             {
-                GeneralerrorProvider.SetError(NombretextBox,
-                     "No debes dejar el nombre vacio");
-                HayErrores = true;
+                GeneralErrorProvider.SetError(TallerIdNumericUpDown, "Introduzcca un Id");
+                errores = true;
             }
-            return HayErrores;
-        }
 
+            if (error == 2 && string.IsNullOrEmpty(NombretextBox.Text))
+            {
+                GeneralErrorProvider.SetError(NombretextBox, "Introduzca un Nombre");
+                errores = true;
+            }
+            return errores;
+        }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(TallerIdNumericUpDown.Value);
-            Talleres taller = TalleresBLL.Buscar(id);
-
-            if (taller != null)
+            if (Validar(1))
             {
-                NombretextBox.Text = taller.Nombre;
+                MessageBox.Show("Favor de Llenar (Talleres Id) para poder Buscar");
             }
             else
-                MessageBox.Show("No se encontro!", "Fallo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+
+                int id = Convert.ToInt32(TallerIdNumericUpDown.Value);
+                Talleres taller = TalleresBLL.Buscar(id);
+
+                if (taller != null)
+                {
+                    NombretextBox.Text = taller.Nombre;
+                }
+                else
+                    MessageBox.Show("No se encontro!", "Fallo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonNuevo_Click(object sender, EventArgs e)
@@ -72,39 +84,60 @@ namespace SegundaParcial.UI.Registros
             Talleres taller;
             bool Paso = false;
 
-            taller = LlenaClase();
-
-            //Determinar si es Guardar o Modificar
-            if (TallerIdNumericUpDown.Value == 0)
-                Paso = TalleresBLL.Guardar(taller);
+            if (Validar(2))
+            {
+                MessageBox.Show("Favor de Llenar las Casillas");
+            }
             else
+            {
+                int id = Convert.ToInt32(TallerIdNumericUpDown.Value);
+                var mantenimientos = TalleresBLL.Buscar(id);
+                taller = LlenaClase();
+
+                //Determinar si es Guardar o Modificar
+                if (TallerIdNumericUpDown.Value == 0)
+                    Paso = TalleresBLL.Guardar(taller);
+                else
                 //validar que exista.
-                Paso = TalleresBLL.Modificar(taller);
 
-            //Informar el resultado
-            if (Paso)
-                MessageBox.Show("Guardado!!", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show("No se pudo guardar!!", "Fallo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (mantenimientos != null)
+                {
+                    Paso = TalleresBLL.Modificar(taller);
+                }
 
-            //Para Luego que guarden algo los campos se limpien
-            LimpiarCampos();
+
+                //Informar el resultado
+                if (Paso)
+                    MessageBox.Show("Guardado!!", "Exito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("No se pudo guardar!!", "Fallo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                //Para Luego que guarden algo los campos se limpien
+                LimpiarCampos();
+            }
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(TallerIdNumericUpDown.Value);
-
-            //validar que exista
-            if (TalleresBLL.Eliminar(id))
-                MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (Validar(1))
+            {
+                MessageBox.Show("Favor de Llenar (Vehiculos Id) para poder Eliminar");
+            }
             else
-                MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                int id = Convert.ToInt32(TallerIdNumericUpDown.Value);
 
-            //Para Luego que guarden algo los campos se limpien
-            LimpiarCampos();
+                //validar que exista
+                if (TalleresBLL.Eliminar(id))
+                    MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                //Para Luego que guarden algo los campos se limpien
+                LimpiarCampos();
+            }
         }
     }
 }

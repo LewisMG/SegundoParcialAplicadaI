@@ -146,7 +146,7 @@ namespace SegundaParcial.UI.Registros
                 else
                 {
                     int id = Convert.ToInt32(ArticuloIdNumericUpDown.Value);
-                    Articulos articulos = ArticulosBLL.Buscar(id);
+                    var articulos = ArticulosBLL.Buscar(id);
                     if (articulos != null)
                     {
                         paso = ArticulosBLL.Modificar(articulo);

@@ -18,7 +18,7 @@ namespace SegundoParcial.BLL
 
             try
             {
-
+                
                 if (contexto.articulos.Add(articulo) != null)
                 {
                     contexto.SaveChanges();
